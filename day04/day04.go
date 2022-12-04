@@ -15,6 +15,7 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 
 	for (scanner.Scan() ) {
+
 		line := scanner.Text()
 		r := strings.Split(line,",")
 		r1s := strings.Split(r[0],"-")
@@ -23,6 +24,7 @@ func main() {
 		r1u,_ := strconv.Atoi(r1s[1])
 		r2l,_ := strconv.Atoi(r2s[0])
 		r2u,_ := strconv.Atoi(r2s[1])
+
 		if ((r1l>=r2l) && (r1u<=r2u)) || ((r2l>=r1l) && (r2u<=r1u)) {
 			ncontains++
 		}
@@ -34,6 +36,7 @@ func main() {
 			noverlap++
 		}
 	}
+
 	fmt.Println("ncontains: ",ncontains)
 	fmt.Println("noverlap: ",noverlap)
 }
