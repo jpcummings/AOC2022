@@ -1,0 +1,12 @@
+# part 1 Find all of the directories with a total size of at most 100000. What is the sum of the total sizes of those directories?
+
+cat input.txt | ./day07 | awk '{ if($4<100000) print $4;}' | awk '{tot+=$1;}END{print tot;}'   # => 1325919
+
+# part 2 Find the smallest directory that, if deleted, would free up enough space on the filesystem to run the update. What is the total size of that directory? Total fs size = 70000000, update needs 30000000.  Current usage is 42036703:
+
+cat input.txt | ./day07 | grep 'dir:  /'  # => dir:  /  size:  42036703
+
+# so we need to free up 42036703 - (70000000 - 30000000) = 2036703
+
+
+cat input.txt | ./day07 | sort -n -k 4 | awk '{if($4 > 2036703) print $4;}' | head -1  # => 2050735
