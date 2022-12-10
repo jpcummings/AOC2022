@@ -1,0 +1,3 @@
+go build
+cat input.txt | ./day09
+cat input.txt | ./day09 -n 10
