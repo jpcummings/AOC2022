@@ -1,0 +1,2 @@
+cat input.txt | ./day11 # => 120056
+cat input.txt | ./day11 -n 10000 -r 1 # => 21816744824
